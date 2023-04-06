@@ -16,7 +16,10 @@ public class ReviewController {
 
     @PostMapping()
     public ResponseEntity<Review> createReview(@RequestBody Map<String, String> payload) {
-
+        //this endpoint will receive a JSON data from 
+        //the user and then convert it to a map where
+        // the key is string and the value is string.
+        // Then from this map, we'll be able to access the review body
         return new ResponseEntity<Review>(service.createReview(payload.get("reviewBody"), payload.get("imdbId")), HttpStatus.OK);
     }
 }
