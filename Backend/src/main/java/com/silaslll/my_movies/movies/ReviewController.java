@@ -15,6 +15,7 @@ public class ReviewController {
     private ReviewService service;
 
     @PostMapping()
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<Review> createReview(@RequestBody Map<String, String> payload) {
         //this endpoint will receive a JSON data from
         //the user and then convert it to a map where

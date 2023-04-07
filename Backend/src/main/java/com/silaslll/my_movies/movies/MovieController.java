@@ -15,12 +15,15 @@ public class MovieController {
     @Autowired
     private MovieService service;
 
+
     @GetMapping
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<List<Movie>> getMovies() {
         return new ResponseEntity<List<Movie>>(service.findAllMovies(), HttpStatus.OK);
     }
 
     @GetMapping("/{imdbId}")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<Optional<Movie>> getSingleMovie(@PathVariable String imdbId){
         return new ResponseEntity<Optional<Movie>>(service.findMovieByImdbId(imdbId), HttpStatus.OK);
     }
