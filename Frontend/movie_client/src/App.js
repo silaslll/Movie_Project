@@ -3,6 +3,7 @@ import api from './api/axiosConfig';
 import {useState, useEffect} from 'react';
 import Layout from './component/Layout';
 import {Routes, Route} from 'react-router-dom';
+import Home from './component/home/Home';
 
 
 function App() {
@@ -32,6 +33,8 @@ useEffect(() => {
   return (
     <Routes>
           <Route path="/" element={<Layout/>}>
+          <Route path="/" element={<Home movies={movies} />} ></Route>
+
           </Route>
       </Routes>
   );
