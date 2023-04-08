@@ -1,6 +1,8 @@
 import './App.css';
 import api from './api/axiosConfig';
 import {useState, useEffect} from 'react';
+import Layout from './component/Layout';
+import {Routes, Route} from 'react-router-dom';
 
 
 function App() {
@@ -28,9 +30,10 @@ useEffect(() => {
 
  
   return (
-    <div className="App">
-      <div>222</div>
-    </div>
+    <Routes>
+          <Route path="/" element={<Layout/>}>
+          </Route>
+      </Routes>
   );
 }
 
